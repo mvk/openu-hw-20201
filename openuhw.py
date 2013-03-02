@@ -1,3 +1,4 @@
+
 __author__ = 'stubborn'
 # -*- coding: utf8 -*-
 import sys
@@ -6,6 +7,9 @@ class OpenUHW:
    answers = []
    def __init__(self):
       pass
+
+   def hr_line(self,char='=', length=40):
+      print char*length
 
    def add(self, d):
       if not isinstance(d, dict):
@@ -20,4 +24,4 @@ class OpenUHW:
          print u"title: {title}".format(**ans)
          for j, res in enumerate(ans.get("answer")):
             print u'{descr}={result}'.format(**res)
-
+         self.hr_line()
