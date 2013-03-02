@@ -36,28 +36,44 @@ def ex_1():
    '''
    hw1 ex1
    '''
+   result = OpenUHWResult(title=u"ex1")
    a=float(1.0E6)
    b=float(5.0E-3)
    c=float(0.5E2)
-   result = OpenUHWResult(title=u"ex1")
-   result.answers.append(dict(descr=u"ABC", result=a*b*c))
-   result.answers.append(dict(descr=u"AC^(-2)", result=(a/(c*c))))
+   result.answers.append(
+      dict(
+         descr=u"ABC",
+         result=a*b*c,
+      )
+   )
+   result.answers.append(
+      dict(
+         descr=u"AC^(-2)",
+         result=(a/(c*c)),
+      )
+   )
    return result
 
 
 
 def ex_2():
+   result = OpenUHWResult(title=u"ex2")
    r_atom=float(1.0E-10)
    r_earth=float(6.37E6)
    v_atom=box_volume(r_atom) ## annoying assumption
    v_earth=sphere_volume(r_earth)
    ratio = v_earth/v_atom
-   result = OpenUHWResult(title=u"ex2")
-   result.answers.append(dict(descr=u"V(earth)/'V'(atom)", result=ratio))
+   result.answers.append(
+      dict(
+         descr=u"V(earth)/'V'(atom)",
+         result=ratio,
+      )
+   )
    return result
 
 
 def ex_3():
+   result = OpenUHWResult(title=u"ex3")
    ## box a,b,c
    a=float(9.7E-2) # m
    b=float(5.3E-2) # m
@@ -76,8 +92,12 @@ def ex_3():
    vol_min=box_volume(a_min, b_min, c_min)
    vol_max=box_volume(a_max, b_max, c_max)
    vol_err = (vol_max-vol_min)/2
-   result = OpenUHWResult(title=u"ex3")
-   result.answers.append(dict(descr=u"V(box)±err", result=u"{vol_box}m^3±{vol_err}m^3".format(**locals())))
+   result.answers.append(
+      dict(
+         descr=u"V(box)±err",
+         result=u"{vol_box}m^3±{vol_err}m^3".format(**locals()),
+      )
+   )
    return result
 
 def ex_4():
@@ -90,16 +110,25 @@ def ex_4():
    mass_hg = vol*density_hg ## grams
    molar_mass = mass_hg/atomic_mass_hg # mols
    atoms_count = molar_mass * AVOGADRO_CONSTANT
-   result.answers.append(dict(descr=u"atoms_count(hg, vol=1 cm^3)", result=atoms_count))
+   result.answers.append(
+      dict(
+         descr=u"atoms_count(hg, vol=1 cm^3)",
+         result=atoms_count,
+      )
+   )
    molar_mass = 1 # moles
    mass_hg = molar_mass * atomic_mass_hg # grams
    vol = mass_hg / density_hg
-   result.answers.append(dict(descr=u"volume(hg, 1 mol)", result=vol))
+   result.answers.append(
+      dict(
+         descr=u"volume(hg, 1 mol)",
+         result=vol,
+      )
+   )
    return result
 
 def ex_5():
    result = OpenUHWResult(title=u"ex5")
-
    sound_speed_air = float(333.33) ## m/sec
    light_speed_air = float(3.0E8) ## m/sec
 
@@ -116,7 +145,6 @@ def ex_5():
    return result
 
 def ex_6():
-
    result = OpenUHWResult(title=u"ex6")
    ## work in given units:
    density = float(1.55E-3) # in g/cm^-3
@@ -128,7 +156,6 @@ def ex_6():
    mass_of_an_atom = mass_of_an_atom_in_gr*float(1.0E-3)
    ### hence:
    amu = mass_of_an_atom*kg2amu_coefficient
-
    ## how many orders of magnitude is speed of light higher than speed of sound?
    result.answers.append(
       dict(
@@ -137,6 +164,27 @@ def ex_6():
       )
    )
    return result
+
+def ex_7():
+   result = OpenUHWResult(title=u"ex7")
+   ## work in given units:
+   isotopes_data = [
+      dict(mass=float(23.985),   probability=float(0.79), ),
+      dict(mass=float(24.9858),  probability=None, ),
+      dict(mass=float(25.9826),  probability=None, ),
+   ]
+   # iso_1_probability = float(0.79)
+   std_mass_in_amu   = float(24.305)
+
+   result.answers.append(
+      dict(
+         descr=u"P(max(mass, {isotopes}))",
+         result=u"{}".format(str(amu)),
+      )
+   )
+   return result
+
+
 
 
 solvers_list = [
