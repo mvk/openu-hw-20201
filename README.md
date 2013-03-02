@@ -11,7 +11,7 @@ chdir to the cloned root folder, and then run:
 ./mamah1.py
 
 the output are the results of mammah1.
-Don't blindly copy-paste, '''Verify the input data'''
+Don't blindly copy-paste, *verify the input data*
 
-etc.
+Regards.
 
