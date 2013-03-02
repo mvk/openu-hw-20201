@@ -1,4 +1,12 @@
 openu-hw-20201
 ==============
 
-hw solutions in python
+course 20201 hw solutions done in Python with some explanations.
+Getting the answers:
+run:
+./mammah1.py
+
+the output are the results of mammah1.
+
+ etc.
+
