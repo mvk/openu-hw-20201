@@ -21,7 +21,7 @@ Getting the answers:
 --------------------
 
     # chdir to the cloned root folder, and then run:
-    ./mamah1.py
+    python ./mamah1.py
 
 the output is the results of the hw in quesiton.
 
